@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { BsLayoutSidebar, BsPlusSquare } from 'react-icons/bs'
 import { FiMessageSquare } from 'react-icons/fi'
 import { AiOutlinePlus, AiOutlineUser } from 'react-icons/ai'
@@ -12,8 +12,24 @@ export default function Sidebar() {
     { id: 2, name: 'Chat 2' },
     { id: 3, name: 'Chat 3' },
   ])
+
   const [isOpen, setIsOpen] = useState(true)
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 768) {
+        setIsOpen(false)
+      } else {
+        setIsOpen(true)
+      }
+    }
+
+    handleResize()
+
+    window.addEventListener('resize', handleResize)
+
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
   const handleToggle = () => {
     setIsOpen(!isOpen)
   }
@@ -22,7 +38,7 @@ export default function Sidebar() {
     <>
       {isOpen && (
         <>
-          <div className='fixed left-0 top-0 p-4 pt-6 bg-gray-200 rounded-ee-md min-h-screen'>
+          <div className='fixed left-0 top-0 p-4 pt-6 bg-gray-200 min-h-screen'>
             <div>
               <BsPlusSquare className='w-5 h-5 mb-8' />
               {chatList.map((chat) => (
