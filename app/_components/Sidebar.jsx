@@ -38,7 +38,7 @@ export default function Sidebar() {
     <>
       {isOpen && (
         <>
-          <div className='fixed left-0 top-0 p-4 pt-6 bg-gray-200 min-h-screen'>
+          <div className='fixed left-0 top-0 p-4 pt-6 bg-gray-200 min-h-screen z-10'>
             <div>
               <BsPlusSquare className='w-5 h-5 mb-8' />
               {chatList.map((chat) => (
@@ -47,9 +47,9 @@ export default function Sidebar() {
             </div>
             <AiOutlineUser className='w-5 h-5 fixed bottom-10' />
           </div>
-          <div className='flex flex-col items-center justify-center text-gray-600 bg-gray-200 min-h-screen shadow-md shadow-gray-200 w-12 hover:w-64 transition-all duration-300 delay-300 hover:delay-200 opacity-0 hover:opacity-100 z-10'>
-            <div className='flex flex-row fixed top-0 mt-2'>
-              <button className='flex flex-row p-4 pr-14 hover:bg-gray-300 rounded-md min-w-fit'>
+          <div className='flex flex-col items-center justify-center text-gray-600 bg-gray-200 min-h-screen shadow-md shadow-gray-200 w-12 hover:w-80 transition-all duration-300 delay-300 hover:delay-200 opacity-0 hover:opacity-100 z-10'>
+            <div className='flex flex-row justify-between w-72 fixed top-0 mt-2'>
+              <button className='flex flex-row p-4 hover:bg-gray-300 rounded-md min-w-fit'>
                 <AiOutlinePlus className='w-5 h-5' />
                 <span className='text-sm ml-2'>New Chat</span>
               </button>
@@ -57,34 +57,36 @@ export default function Sidebar() {
                 className='p-4 has-tooltip ml-4 hover:bg-gray-300 rounded-md'
                 onClick={handleToggle}
               >
-                <span class='tooltip rounded shadow-lg p-1 bg-gray-600 text-gray-200 ml-14 w-24 text-xs'>
+                <span className='tooltip rounded shadow-lg p-1 bg-gray-600 text-gray-200 ml-14 w-24 text-xs'>
                   Close Sidebar
                 </span>
                 <BsLayoutSidebar className='w-5 h-5' />
               </button>
             </div>
             <div className='fixed left-0 top-16'>
-              {chatList.map((chat) => (
-                <ul
-                  className='w-60 pl-3 overflow-y-auto'
-                  style={{ maxHeight: 'calc(100vh - 10rem)' }}
-                  key={chat.id}
-                >
-                  <li className='flex flex-row hover:bg-gray-300 rounded-md cursor-pointer'>
+              <ul
+                className='w-60 pl-3 overflow-y-auto'
+                style={{ maxHeight: 'calc(100vh - 10rem)' }}
+              >
+                {chatList.map((chat) => (
+                  <li
+                    className='flex flex-row hover:bg-gray-300 rounded-md cursor-pointer'
+                    key={chat.id}
+                  >
                     <div className='p-3'>
                       <FiMessageSquare className='w-5 h-5' />
                     </div>
                     <div className='p-3 text-sm'>{chat.name}</div>
                   </li>
-                </ul>
-              ))}
+                ))}
+              </ul>
             </div>
-            <div className='fixed bottom-0 border-t-2 w-48 text-center pt-4 pb-4'>
-              <div className='flex flex-row mb-1'>
+            <div className='fixed bottom-0 border-gray-300 border-t-2 pt-4 pb-4'>
+              <div className='flex flex-row mb-4'>
                 <AiOutlineUser className='w-5 h-5' />
                 <span className='ml-3 text-sm'>Upgrade to Plus</span>
               </div>
-              <div className='flex flex-row justify-between'>
+              <div className='flex flex-row w-64 justify-between'>
                 <div className='flex flex-row space-x-2'>
                   <div className='text-sm'>Avatar</div>
                   <div className='text-sm font-bold'>ajdinl@live.com</div>
