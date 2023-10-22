@@ -1,6 +1,6 @@
 export default function ChatContent() {
   return (
-    <div className='flex flex-col items-center justify-center'>
+    <div className='flex flex-col md:pl-12'>
       ContentContentContentContentContentContentContentContentContentContentContentContentContentContentContentContentContentContentContentContentContentContentContentContentContentContentContentContentContentContentContentContentContentContentContentContentContentContentContentContentContentContentContentContentContentContentContentContent
     </div>
   )
