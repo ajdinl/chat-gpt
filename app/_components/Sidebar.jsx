@@ -38,16 +38,24 @@ export default function Sidebar() {
     <>
       {isOpen && (
         <>
-          <div className='fixed left-0 top-0 p-4 pt-6 bg-gray-200 min-h-screen z-10'>
-            <div>
-              <BsPlusSquare className='w-5 h-5 mb-8' />
-              {chatList.map((chat) => (
-                <FiMessageSquare className='w-5 h-5 mb-6' key={chat.id} />
-              ))}
+          {window.innerWidth > 768 && (
+            <div className='fixed left-0 top-0 p-4 pt-6 bg-gray-200 min-h-screen z-10'>
+              <div>
+                <BsPlusSquare className='w-5 h-5 mb-8' />
+                {chatList.map((chat) => (
+                  <FiMessageSquare className='w-5 h-5 mb-6' key={chat.id} />
+                ))}
+              </div>
+              <AiOutlineUser className='w-5 h-5 fixed bottom-10' />
             </div>
-            <AiOutlineUser className='w-5 h-5 fixed bottom-10' />
-          </div>
-          <div className='flex flex-col items-center justify-center text-gray-600 bg-gray-200 min-h-screen shadow-md shadow-gray-200 w-12 hover:w-80 transition-all duration-300 delay-300 hover:delay-200 opacity-0 hover:opacity-100 z-10'>
+          )}
+          <div
+            className={`flex flex-col items-center justify-center text-gray-600 bg-gray-200 min-h-screen shadow-md shadow-gray-200 z-10 ${
+              window.innerWidth > 768
+                ? 'w-12 hover:w-80 transition-all duration-300 delay-300 hover:delay-200 opacity-0 hover:opacity-100'
+                : 'w-80'
+            }`}
+          >
             <div className='flex flex-row justify-between w-72 fixed top-0 mt-2'>
               <button className='flex flex-row p-4 hover:bg-gray-300 rounded-md min-w-fit'>
                 <AiOutlinePlus className='w-5 h-5' />
