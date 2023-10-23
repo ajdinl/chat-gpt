@@ -14,13 +14,16 @@ export default function Sidebar() {
   ])
 
   const [isOpen, setIsOpen] = useState(true)
+  const [isBiggerScreen, setIsBiggerScreen] = useState(false)
 
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth <= 768) {
         setIsOpen(false)
+        setIsBiggerScreen(false)
       } else {
         setIsOpen(true)
+        setIsBiggerScreen(true)
       }
     }
 
@@ -38,7 +41,7 @@ export default function Sidebar() {
     <>
       {isOpen && (
         <>
-          {window.innerWidth > 768 && (
+          {isBiggerScreen && (
             <div className='fixed left-0 top-0 p-4 pt-6 bg-gray-200 min-h-screen z-10'>
               <div>
                 <BsPlusSquare className='w-5 h-5 mb-8' />
@@ -51,7 +54,7 @@ export default function Sidebar() {
           )}
           <div
             className={`flex flex-col items-center justify-center text-gray-600 bg-gray-200 min-h-screen shadow-md shadow-gray-200 z-10 ${
-              window.innerWidth > 768
+              isBiggerScreen
                 ? 'w-12 hover:w-80 transition-all duration-300 delay-300 hover:delay-200 opacity-0 hover:opacity-100'
                 : 'w-80'
             }`}
