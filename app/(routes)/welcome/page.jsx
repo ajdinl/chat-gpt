@@ -76,7 +76,7 @@ export default function Welcome() {
         <div className='flex justify-center'>
           <Link
             href={'/login'}
-            className='bg-violet-500 hover:bg-blue-600 text-white rounded-lg p-2 px-4 mt-4 transition-colors duration-300 transform hover:scale-105'
+            className='bg-violet-500 hover:bg-violet-600 text-white rounded-lg p-2 px-4 mt-4 transition-colors duration-300 transform hover:scale-105'
           >
             Content Creators and Writers Login
           </Link>
@@ -103,7 +103,7 @@ export default function Welcome() {
         <div className='flex justify-center'>
           <Link
             href={'/login'}
-            className='bg-green-500 hover:bg-blue-600 text-white rounded-lg p-2 px-4 mt-4 transition-colors duration-300 transform hover:scale-105'
+            className='bg-green-500 hover:bg-green-600 text-white rounded-lg p-2 px-4 mt-4 transition-colors duration-300 transform hover:scale-105'
           >
             Students and Educators Login
           </Link>
