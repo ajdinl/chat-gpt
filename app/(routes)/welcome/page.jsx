@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 export default function Welcome() {
   const developerTips = [
@@ -34,7 +35,7 @@ export default function Welcome() {
 
   return (
     <main className='flex flex-row min-h-screen items-center justify-around p-20 space-x-10'>
-      <div className='bg-white/50 backdrop-filter backdrop-blur-lg rounded-lg p-6 mb-6 shadow-md hover:scale-150 hover:z-50 transition-transform duration-300 transform hover:translate-x-40'>
+      <div className='hover:bg-blue-400/20 backdrop-filter backdrop-blur-lg rounded-lg p-6 mb-6 shadow-md hover:scale-150 hover:z-50 transition-transform duration-300 transform hover:translate-x-40'>
         <h2 className='text-2xl font-bold mb-4'>
           Tips for Software Developers
         </h2>
@@ -52,9 +53,16 @@ export default function Welcome() {
           >
             Software Developers Login
           </Link>
+          <Image
+            src='/images/developer.png'
+            layout='fill'
+            objectFit='cover'
+            alt='Developer'
+            className='opacity-30 rounded-md -z-40'
+          />
         </div>
       </div>
-      <div className='bg-white/50 backdrop-filter backdrop-blur-lg rounded-lg p-6 mb-6 shadow-md hover:scale-150 hover:z-50 transition-transform duration-300'>
+      <div className='hover:bg-yellow-400/20 bg-cover backdrop-filter backdrop-blur-lg rounded-lg p-6 mb-6 shadow-md hover:scale-150 hover:z-50 transition-transform duration-300'>
         <h2 className='text-2xl font-bold mb-4'>
           Tips for Content Creators and Writers
         </h2>
@@ -72,9 +80,16 @@ export default function Welcome() {
           >
             Content Creators and Writers Login
           </Link>
+          <Image
+            src='/images/writer.png'
+            layout='fill'
+            objectFit='cover'
+            alt='Writer'
+            className='opacity-30 rounded-md -z-40'
+          />
         </div>
       </div>
-      <div className='bg-white/50 backdrop-filter backdrop-blur-lg rounded-lg p-6 mb-6 shadow-md hover:scale-150 hover:z-50 transition-transform duration-300 transform hover:-translate-x-40'>
+      <div className='hover:bg-green-400/20 backdrop-filter backdrop-blur-lg rounded-lg p-6 mb-6 shadow-md hover:scale-150 hover:z-50 transition-transform duration-300 transform hover:-translate-x-40'>
         <h2 className='text-2xl font-bold mb-4'>
           Tips for Students and Educators
         </h2>
@@ -92,6 +107,13 @@ export default function Welcome() {
           >
             Students and Educators Login
           </Link>
+          <Image
+            src='/images/students.png'
+            layout='fill'
+            objectFit='cover'
+            alt='Student'
+            className='opacity-30 rounded-md -z-40'
+          />
         </div>
       </div>
     </main>
