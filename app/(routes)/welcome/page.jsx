@@ -35,21 +35,23 @@ export default function Welcome() {
 
   return (
     <main className='flex flex-row min-h-screen items-center justify-around p-20 space-x-10'>
-      <div className='hover:bg-blue-400/20 backdrop-filter backdrop-blur-lg rounded-lg p-6 mb-6 shadow-md hover:scale-150 hover:z-50 transition-transform duration-300 transform hover:translate-x-40'>
+      <div className='group hover:bg-sky-400/20 backdrop-filter backdrop-blur-lg rounded-lg p-6 mb-6 shadow-md hover:scale-150 hover:z-50 transition-transform duration-300 transform hover:translate-x-40'>
         <h2 className='text-2xl font-bold mb-4'>
           Tips for Software Developers
         </h2>
         <p>Here are some tips for developers:</p>
-        <ol className='list-decimal p-4'>
+        <ol className='list-decimal p-4 group-hover:pl-8 group-hover:bg-white/50 rounded-t-md'>
           {developerTips.map((item, index) => (
             <li key={index}>{item}</li>
           ))}
         </ol>
-        <p className='text-sm font-bold'>{developerBonusTip}</p>
+        <p className='text-sm font-bold pb-4 group-hover:px-8 group-hover:bg-white/50 rounded-b-md'>
+          {developerBonusTip}
+        </p>
         <div className='flex justify-center'>
           <Link
             href={'/login'}
-            className='bg-blue-500 hover:bg-blue-600 text-white rounded-lg p-2 px-4 mt-4 transition-colors duration-300 transform hover:scale-105'
+            className='bg-sky-500 hover:bg-sky-600 text-white rounded-lg p-2 px-4 mt-4 transition-colors duration-300 transform hover:scale-105'
           >
             Software Developers Login
           </Link>
@@ -62,17 +64,19 @@ export default function Welcome() {
           />
         </div>
       </div>
-      <div className='hover:bg-yellow-400/20 bg-cover backdrop-filter backdrop-blur-lg rounded-lg p-6 mb-6 shadow-md hover:scale-150 hover:z-50 transition-transform duration-300'>
+      <div className='group hover:bg-yellow-400/20 bg-cover backdrop-filter backdrop-blur-lg rounded-lg p-6 mb-6 shadow-md hover:scale-150 hover:z-50 transition-transform duration-300'>
         <h2 className='text-2xl font-bold mb-4'>
           Tips for Content Creators and Writers
         </h2>
         <p>Here are some tips for creators and writers:</p>
-        <ol className='list-decimal p-4'>
+        <ol className='list-decimal p-4 group-hover:pl-8 group-hover:bg-white/50 rounded-t-md'>
           {contentCreatorsTips.map((item, index) => (
             <li key={index}>{item}</li>
           ))}
         </ol>
-        <p className='text-sm font-bold'>{contentCreatorsBonusTip}</p>
+        <p className='text-sm font-bold pb-4 group-hover:px-8 group-hover:bg-white/50 rounded-b-md'>
+          {contentCreatorsBonusTip}
+        </p>
         <div className='flex justify-center'>
           <Link
             href={'/login'}
@@ -89,17 +93,19 @@ export default function Welcome() {
           />
         </div>
       </div>
-      <div className='hover:bg-green-400/20 backdrop-filter backdrop-blur-lg rounded-lg p-6 mb-6 shadow-md hover:scale-150 hover:z-50 transition-transform duration-300 transform hover:-translate-x-40'>
+      <div className='group hover:bg-green-400/20 backdrop-filter backdrop-blur-lg rounded-lg p-6 mb-6 shadow-md hover:scale-150 hover:z-50 transition-transform duration-300 transform hover:-translate-x-40'>
         <h2 className='text-2xl font-bold mb-4'>
           Tips for Students and Educators
         </h2>
         <p>Here are some tips for students and educators:</p>
-        <ol className='list-decimal p-4'>
+        <ol className='list-decimal p-4 group-hover:pl-8 group-hover:bg-white/50 rounded-t-md'>
           {studentEducatorTips.map((item, index) => (
             <li key={index}>{item}</li>
           ))}
         </ol>
-        <p className='text-sm font-bold'>{studentEducatorBonusTip}</p>
+        <p className='text-sm font-bold pb-4 group-hover:px-8 group-hover:bg-white/50 rounded-b-md'>
+          {studentEducatorBonusTip}
+        </p>
         <div className='flex justify-center'>
           <Link
             href={'/login'}
