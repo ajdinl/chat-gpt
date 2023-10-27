@@ -5,7 +5,7 @@ import { BsLayoutSidebar, BsPlusSquare } from 'react-icons/bs'
 import { FiMessageSquare } from 'react-icons/fi'
 import { AiOutlinePlus, AiOutlineUser } from 'react-icons/ai'
 import { HiOutlineDotsHorizontal } from 'react-icons/hi'
-import ThemeSwitcher from '../ThemeProvider'
+import ThemeSwitcher from '../ThemeSwitcher'
 
 export default function Sidebar() {
   const [chatList, setChatList] = useState([
@@ -43,7 +43,7 @@ export default function Sidebar() {
       {isOpen && (
         <>
           {isBiggerScreen && (
-            <div className='fixed left-0 top-0 p-4 pt-6 bg-gray-200 min-h-screen z-10'>
+            <div className='fixed left-0 top-0 p-4 pt-6 bg-gray-200 dark:bg-gray-800 min-h-screen z-10'>
               <div>
                 <BsPlusSquare className='w-5 h-5 mb-8' />
                 {chatList.map((chat) => (
@@ -54,20 +54,20 @@ export default function Sidebar() {
             </div>
           )}
           <div
-            className={`flex flex-col items-center justify-center text-gray-600 bg-gray-200 min-h-screen shadow-md shadow-gray-200 z-10 ${
+            className={`flex flex-col items-center justify-center text-gray-600 dark:text-gray-300 bg-gray-200 dark:bg-gray-800 min-h-screen shadow-md shadow-gray-200 dark:shadow-gray-700 z-10 ${
               isBiggerScreen
                 ? 'w-12 hover:w-80 transition-all duration-300 delay-300 hover:delay-200 opacity-0 hover:opacity-100'
                 : 'w-80'
             }`}
           >
             <div className='flex flex-row justify-between w-72 fixed top-0 mt-2'>
-              <button className='flex flex-row p-4 hover:bg-gray-300 rounded-md min-w-fit'>
+              <button className='flex flex-row p-4 hover:bg-gray-300 dark:hover:bg-gray-600 rounded-md min-w-fit border border-gray-600'>
                 <AiOutlinePlus className='w-5 h-5' />
                 <span className='text-sm ml-2'>New Chat</span>
               </button>
               <ThemeSwitcher />
               <button
-                className='p-4 has-tooltip ml-4 hover:bg-gray-300 rounded-md'
+                className='p-4 has-tooltip ml-4 hover:bg-gray-300 dark:hover:bg-gray-600 rounded-md'
                 onClick={handleToggle}
               >
                 <span className='tooltip rounded shadow-lg p-1 bg-gray-600 text-gray-200 ml-14 w-24 text-xs'>
@@ -83,7 +83,7 @@ export default function Sidebar() {
               >
                 {chatList.map((chat) => (
                   <li
-                    className='flex flex-row hover:bg-gray-300 rounded-md cursor-pointer'
+                    className='flex flex-row hover:bg-gray-300 dark:hover:bg-gray-600 rounded-md cursor-pointer'
                     key={chat.id}
                   >
                     <div className='p-3'>
@@ -112,7 +112,7 @@ export default function Sidebar() {
       )}
       {!isOpen && (
         <button
-          className='fixed left-0 top-0 p-4 bg-gray-200 bg-opacity-40 rounded-ee-md'
+          className='fixed left-0 top-0 p-4 bg-gray-200 dark:bg-gray-800 bg-opacity-40 rounded-ee-md'
           onClick={handleToggle}
         >
           <BsLayoutSidebar className='w-5 h-5' />

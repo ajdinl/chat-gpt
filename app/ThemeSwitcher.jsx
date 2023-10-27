@@ -19,11 +19,17 @@ const ThemeSwitcher = () => {
   return (
     <>
       {theme === 'light' ? (
-        <button onClick={() => setTheme('dark')}>
+        <button
+          className='p-4 hover:bg-gray-300 dark:hover:bg-gray-600 rounded-md '
+          onClick={() => setTheme('dark')}
+        >
           <BsLightbulbFill className='w-5 h-5' />
         </button>
       ) : (
-        <button onClick={() => setTheme('light')}>
+        <button
+          className='p-4 hover:bg-gray-300 dark:hover:bg-gray-600 rounded-md '
+          onClick={() => setTheme('light')}
+        >
           <BsLightbulb className='w-5 h-5' />
         </button>
       )}
