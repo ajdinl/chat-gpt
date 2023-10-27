@@ -1,6 +1,6 @@
-import ChatContent from '../_components/ChatContent'
-import Footer from '../_components/Footer'
-import Sidebar from '../_components/Sidebar'
+import ChatContent from '@components/ChatContent'
+import Footer from '@components/Footer'
+import Sidebar from '@components/Sidebar'
 
 export default function Home() {
   return (

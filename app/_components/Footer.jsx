@@ -16,7 +16,7 @@ export default function Footer() {
       onSubmit={handleSubmit}
     >
       <input
-        className='bg-gray-300 rounded-s-md p-3 w-screen outline-none'
+        className='bg-gray-300 dark:bg-gray-600 rounded-s-md p-3 w-screen outline-none'
         type='text'
         placeholder='Send a message'
         value={message}
