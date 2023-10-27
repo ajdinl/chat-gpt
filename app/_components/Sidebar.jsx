@@ -5,6 +5,7 @@ import { BsLayoutSidebar, BsPlusSquare } from 'react-icons/bs'
 import { FiMessageSquare } from 'react-icons/fi'
 import { AiOutlinePlus, AiOutlineUser } from 'react-icons/ai'
 import { HiOutlineDotsHorizontal } from 'react-icons/hi'
+import ThemeSwitcher from '../ThemeProvider'
 
 export default function Sidebar() {
   const [chatList, setChatList] = useState([
@@ -64,6 +65,7 @@ export default function Sidebar() {
                 <AiOutlinePlus className='w-5 h-5' />
                 <span className='text-sm ml-2'>New Chat</span>
               </button>
+              <ThemeSwitcher />
               <button
                 className='p-4 has-tooltip ml-4 hover:bg-gray-300 rounded-md'
                 onClick={handleToggle}
